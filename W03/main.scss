@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+$heading-font: 'Lora';
+$body-font: 'Helvetica', 'Arial', 'sans-serif';
+
+$main-bg: #faebd7;
+$blue: #6495ed;
+$active-link: #deb887;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-font;
+}
+
+h1,
+h2 {
+  font-family: $heading-font;
+}
+
+header {
+  background-color: $blue;
+  padding: 3em 2em;
+}
+
+main {
+  background-color: $main-bg;
+  padding: 2em;
+}
+
+h1 {
+  margin-bottom: 0.8em;
+  text-align: end;
+}
+
+h1 > a,
+nav > ul > li a {
+  text-decoration: none;
+  color: $main-bg;
+}
+
+nav {
+  ul {
+    list-style: none;
+    text-align: end;
+
+    li {
+      margin-top: 1em;
+
+      a {
+        &:visited {
+          color: $main-bg;
+        }
+
+        &:active {
+          color: $active-link;
+        }
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.post-content p a:active,
+section > h2 > a:active {
+  color: $active-link;
+}
+
+article {
+  background-color: white;
+  padding: 2em;
+  margin-bottom: 3em;
+}
+
+article > div {
+  opacity: 0.6;
+}
+
+section > h2 > a {
+  color: black;
+  text-decoration: none;
+}
+
+section > h2 {
+  margin: 0.3em 0;
+}
+
+figure {
+  margin-top: 3em;
+  height: 17em;
+  display: grid;
+  place-items: center;
+}
+
+figure > img {
+  width: 60%;
+  height: 13.75em;
+  object-fit: cover;
+}
+
+.post-content p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.post-content p a,
+.post-content p a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+.post-content p a:hover {
+  text-decoration: underline;
+}
+
+section > h2 > a:hover {
+  color: $blue;
+}
+
+@media screen and (min-width: 28em) {
+  body > div {
+    display: grid;
+    grid-template-columns: 12em 1fr;
+  }
+
+  article {
+    padding: 1em;
+  }
+
+  figure {
+    margin-top: 1em;
+
+    img {
+      object-fit: contain;
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (min-width: 42em) {
+  body > div {
+    grid-template-columns: 15em 1fr;
+  }
+
+  main,
+  article {
+    padding: 3em;
+  }
+
+  figure {
+    margin-top: 1em;
+
+    img {
+      object-fit: contain;
+      width: 90%;
+      height: 14em;
+    }
+  }
+}
