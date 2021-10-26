@@ -1,0 +1,9 @@
+.col-grid {
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-wrap: wrap; */
+}
+
+.card img {
+  width: 100%;
+}
