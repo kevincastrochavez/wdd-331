@@ -31,6 +31,22 @@ body {
   border-radius: 50%;
 }
 
+.rectangle {
+  width: 25px;
+  height: 50px;
+  background-color: #e64f55;
+}
+
+.rectangle:nth-child(1) {
+  border-radius: 100px 0 0 100px;
+  animation: animation3Left 3s infinite;
+}
+
+.rectangle:nth-child(2) {
+  border-radius: 0 100px 100px 0;
+  animation: animation3Right 3s infinite;
+}
+
 #c2,
 #c3,
 #c4 {
@@ -39,8 +55,26 @@ body {
   align-items: center;
 }
 
+#c1 div {
+  animation: animation 3s infinite;
+}
+
 #c2 div {
   animation: animation2 3s infinite;
+}
+
+@keyframes animation {
+  25% {
+    transform: translateX(130px);
+  }
+
+  50% {
+    transform: translate(130px, 130px);
+  }
+
+  75% {
+    transform: translate(0, 130px);
+  }
 }
 
 @keyframes animation2 {
@@ -64,5 +98,33 @@ body {
 
   100% {
     border-radius: 50%;
+  }
+}
+
+@keyframes animation3Left {
+  50% {
+    transform: translateX(-12.5px);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animation3Right {
+  50% {
+    transform: translateX(12.5px);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
