@@ -1,0 +1,32 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  border-radius: 5px;
+  width: 300px;
+  overflow: hidden;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card__info {
+  padding: 20px;
+}
+
+.card__title {
+  margin-bottom: 0;
+}
+
+.card__date {
+  margin-top: 0;
+  opacity: 0.6;
+}
+
+.card__link,
+.card__tags {
+  text-decoration: none;
+  color: cornflowerblue;
+}
