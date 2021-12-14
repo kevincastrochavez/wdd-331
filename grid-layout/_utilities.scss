@@ -1,0 +1,47 @@
+// format a list horizontally with spacing
+@mixin horizontal-list($spacing: var(--s1)) {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & > * + * {
+    margin-left: $spacing;
+    margin-top: 0;
+  }
+}
+
+// format a list vertically with spacing
+@mixin vertical-list($spacing: var(--s-3)) {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > * + * {
+    margin-top: $spacing;
+    margin-left: 0;
+  }
+}
+
+@mixin breakpoint($break) {
+  @if $break == large {
+    @media (min-width: $break-large) {
+      @content;
+    }
+  } @else if $break == medium {
+    @media (min-width: $break-medium) {
+      @content;
+    }
+  } @else if $break == small {
+    @media (min-width: $break-small) {
+      @content;
+    }
+  } @else {
+    @media ($break) {
+      @content;
+    }
+  }
+}

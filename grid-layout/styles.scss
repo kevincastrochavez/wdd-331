@@ -1,0 +1,169 @@
+@import '_variables.scss';
+@import '_utilities.scss';
+
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio)); // 5px
+  --s-2: calc(var(--s-1) / var(--ratio)); // 8px
+  --s-1: calc(var(--s0) / var(--ratio)); // 12px
+  --s0: 1rem; // 18px
+  --s1: calc(var(--s0) * var(--ratio)); // 27px
+  --s2: calc(var(--s1) * var(--ratio)); // 40px
+  --s3: calc(var(--s2) * var(--ratio)); // 60px
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  font-family: $body-font;
+  color: $font-color;
+  background-color: $background-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $headline-font;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: var(--s3);
+  text-align: center;
+
+  @include breakpoint(small) {
+    font-size: 10vw;
+  }
+}
+
+figure {
+  margin: 0;
+  background-color: white;
+  box-shadow: -4px 4px 17px 13px rgb(0, 0, 0);
+  border: 2vw solid #fff;
+
+  @include breakpoint(small) {
+    border: 1.4vw solid #fff;
+  }
+}
+
+a:link,
+a:visited {
+  color: $font-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $logo-color;
+}
+
+header {
+  a:link,
+  a:visited {
+    color: white;
+  }
+  @include breakpoint(small) {
+    a:link,
+    a:visited {
+      color: $font-color;
+    }
+    a:hover {
+      color: $logo-color;
+    }
+  }
+}
+
+main {
+  padding: 0 var(--s2) var(--s3) var(--s2);
+}
+
+.u-portrait {
+  width: 35vw;
+  > img {
+    width: 100%;
+  }
+}
+.u-landscape {
+  width: 50vw;
+  > img {
+    width: 100%;
+  }
+}
+
+.u-horizontal-list {
+  @include horizontal-list();
+}
+
+.b {
+  &-main-nav {
+    &__nav {
+      display: none;
+
+      width: 100vw;
+      height: 100vh;
+      background-color: $logo-color;
+
+      @include breakpoint(large) {
+        width: unset;
+        height: unset;
+        background-color: transparent;
+      }
+
+      & ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        font-size: 2em;
+        margin-top: 25vh;
+
+        @include breakpoint(large) {
+          flex-direction: row;
+          font-size: 1em;
+        }
+      }
+    }
+
+    &__toggle {
+      width: 54px;
+      height: 54px;
+      display: none;
+      cursor: pointer;
+    }
+  }
+
+  &-brand {
+    background-color: $logo-color;
+    width: 54px;
+    height: 54px;
+    border-radius: $logo-size / 2.4;
+    transform: rotate(30deg);
+  }
+}
+
+footer {
+  font-size: var(--s-1);
+  margin-bottom: var(--s3);
+  @include breakpoint(small) {
+    font-size: var(--s0);
+  }
+}
